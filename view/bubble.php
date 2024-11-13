@@ -268,7 +268,7 @@
                             } catch (e) {
                                 $('#messageContainer').html(`
                         <div class="alert alert-danger" role="alert">
-                            <strong>Erro desconhecido!</strong> Por favor, tente novamente.
+                            Faça login para pedir.
                         </div>
                     `); // Exibe mensagem padrão se não for JSON
                             }
@@ -333,7 +333,7 @@
                             } catch (e) {
                                 $('#messageContainer').html(`
                         <div class="alert alert-danger" role="alert">
-                            <strong>Erro desconhecido. Por favor, tente novamente.</strong>
+                            Faça login para favoritar
                         </div>
                     `); // Exibe mensagem padrão se não for JSON
                             }
