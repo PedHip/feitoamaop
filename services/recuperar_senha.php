@@ -37,7 +37,7 @@ if (isset($_POST['email'])) {
                 $headers = 'From: no-reply@seusite.com.br';
 
                 // Envia o e-mail para o usuário
-                if (mail($email, $assunto, $mensagem, $headers)) {
+                if (mailto($email, $assunto, $mensagem, $headers)) {
                     $response = [
                         'status' => 'success',
                         'message' => 'Uma nova senha foi enviada para seu email.'
