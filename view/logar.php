@@ -27,28 +27,38 @@
 
     </form>
 
-    <span>ainda não possui conta?</span>
-    <a href="cadastro.php">cadastrar</a>
-    <button id="esquecisenhamodal">esqueci minha senha</button>
-    <div class="modal fade" tabindex="-1" id="modalsenha">
-        <span>digite seu email para recuperar senha</span>
-        <form method="POST" id="esquecisenhaform">
-            <input type="email" name="email">
-            <button type="submit">enviar</button>
-            <span id="mensagememail"></span>
-        </form>
-    </div>
+<span>Ainda não possui conta?</span>
+<a href="cadastro.php">Cadastrar</a>
+<button id="esquecisenhamodal">Esqueci minha senha</button>
 
-    <div id="mensagem"></div>
+<div class="modal fade" tabindex="-1" id="modalsenha">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Recuperar Senha</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <span>Digite seu e-mail para recuperar a senha</span>
+                <form method="POST" id="esquecisenhaform">
+                    <input type="email" name="email" placeholder="Seu e-mail" required>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <span id="mensagememail"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mensagem"></div>
 
     <script>
         $(document).ready(function() {
-            $('#modalsenha').hide;
-
-            $('#esquecisenhamodal').on('click', function(){
-                $('#modalsenha').show();
-            });
-
+            $('#esquecisenhamodal').on('click', function() {
+            $('#modalsenha').modal('show');
+        });
             
             $('#esquecisenhaform').on('submit', function(event){
                 event.preventDefault();
