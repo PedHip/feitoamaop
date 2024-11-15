@@ -25,6 +25,15 @@
 
         <span>ainda não possui conta?</span>
         <a href="cadastro.php">cadastrar</a>
+        <span id="esquecisenhamodal">esqueci minha senha</span>
+        <modal id="modalsenha">
+            <span>digite seu email para recuperar senha</span>
+            <form method="POST" id="esquecisenhaform">
+                <input type="email" name="email">
+                <button type="submit">enviar</button>
+                <span id="mensagememail"></span>
+            </form>
+        </modal>
 
     </form>
 
@@ -32,6 +41,30 @@
 
     <script>
         $(document).ready(function() {
+
+          $('#esquecisenhamodal').on('click', function(){
+                $('#modalsenha').show();
+            });
+
+            
+            $('#esquecisenhaform').on('submit', function(event){
+                event.preventDefault();
+
+                $.ajax({
+                    url: '../services/recuperar_senha.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    datatype: 'json',
+                    success: function(response) {
+                        if (response.status === 'success'){
+                            $('#mensagememail').html('response.message')}
+                        else{
+                            $('#mensagememail').html('response.message');
+                    }
+                }
+            });
+        });
+            
             $('#formLogin').on('submit', function(event) {
                 event.preventDefault();
 
