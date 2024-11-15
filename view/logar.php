@@ -1,6 +1,4 @@
-<?php
 
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -59,24 +57,27 @@
             $('#esquecisenhamodal').on('click', function() {
             $('#modalsenha').modal('show');
         });
-            
-            $('#esquecisenhaform').on('submit', function(event){
-                event.preventDefault();
+        
+        $('#esquecisenhaform').on('submit', function(event) {
+            event.preventDefault();
 
-                $.ajax({
-                    url: '../services/recuperar_senha.php',
-                    type: 'POST',
-                    data: $(this).serialize(),
-                    datatype: 'json',
-                    success: function(response) {
-                        if (response.status === 'success'){
-                            $('#mensagememail').html('response.message')}
-                        else{
-                            $('#mensagememail').html('response.message');
+            $.ajax({
+                url: '../services/recuperar_senha.php',
+                type: 'POST',
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function(response) {
+                    // Exibe a mensagem de resposta
+                    $('#mensagememail').html(response.message);
+                    if (response.status === 'success') {
+                        $('#mensagememail').css('color', 'green');
+                    } else {
+                        $('#mensagememail').css('color', 'red');
                     }
                 }
             });
         });
+    
             
             $('#formLogin').on('submit', function(event) {
                 event.preventDefault();
