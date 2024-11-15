@@ -79,7 +79,7 @@ class Usuario {
         $errorInfo = $stmt->errorInfo();
         return json_encode(['status' => 'error', 'message' => 'Erro ao realizar o cadastro: ' . $errorInfo[2]]);
     }
-}
+}	
 
         public function verifyEmail($email) {
         $query = "SELECT * FROM usuarios WHERE email = :email";
@@ -99,7 +99,7 @@ class Usuario {
 
         return $stmt->execute();
     }
-}
+
 
     public function autenticar() {
         $query = "SELECT senha, tipo_usuario FROM " . $this->table_name . " WHERE email = :email LIMIT 1";
