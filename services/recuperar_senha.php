@@ -20,8 +20,11 @@ if (isset($_POST['email'])) {
     if (!empty($email)) {
         // Verifica se o e-mail existe no banco de dados
         if ($user->verifyEmail($email)) {
-            // Gera uma senha aleatória de 8 caracteres
-            $senhaAleatoria = substr(bin2hex(random_bytes(8)), 0, 8);
+            // Gera uma senha aleatória de 8 caracteres utilizando mt_rand
+            $senhaAleatoria = '';
+            for ($i = 0; $i < 8; $i++) {
+                $senhaAleatoria .= mt_rand(0, 9); // Gera um número aleatório de 0 a 9
+            }
 
             // Criptografa a senha antes de salvar no banco de dados
             $senhaHash = password_hash($senhaAleatoria, PASSWORD_DEFAULT);
@@ -34,7 +37,7 @@ if (isset($_POST['email'])) {
                 $headers = 'From: no-reply@seusite.com.br';
 
                 // Envia o e-mail para o usuário
-                if (mailto($email, $assunto, $mensagem, $headers)) {
+                if (mail($email, $assunto, $mensagem, $headers)) {
                     $response = [
                         'status' => 'success',
                         'message' => 'Uma nova senha foi enviada para seu email.'
