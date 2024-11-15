@@ -81,7 +81,25 @@ class Usuario {
     }
 }
 
-    
+        public function verifyEmail($email) {
+        $query = "SELECT * FROM usuarios WHERE email = :email";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        return $stmt->rowCount() > 0;
+    }
+
+    // Método para editar a senha do usuário
+    public function recuperarSenha($email, $senhaHash) {
+        $query = "UPDATE usuarios SET senha = :senha WHERE email = :email";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':senha', $senhaHash);
+        $stmt->bindParam(':email', $email);
+
+        return $stmt->execute();
+    }
+}
 
     public function autenticar() {
         $query = "SELECT senha, tipo_usuario FROM " . $this->table_name . " WHERE email = :email LIMIT 1";
