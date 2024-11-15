@@ -19,10 +19,10 @@ if (isset($_POST['email'])) {
 
             // Atualiza a senha no banco de dados
             $senhaHash = password_hash($senhaAleatoria, PASSWORD_DEFAULT);
-            $user->editarUsuario($email, $senhaHash);
+            $user->recuperarSenha($email, $senhaHash);
 
             // Envia a nova senha por e-mail
-            mail($email, 'Sua nova senha', 'Sua nova senha é: ' . $senhaAleatoria);
+            mailto($email, 'Sua nova senha', 'Sua nova senha é: ' . $senhaAleatoria);
 
             $response = [
                 'status' => 'success',
