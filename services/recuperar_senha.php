@@ -5,7 +5,7 @@ require_once '../models/usuario.php';
 
 header('Content-Type: application/json');
 
-$user = new Usuario();
+$user = new usuario();
 
 // Verifica se o campo email foi enviado
 if (isset($_POST['email'])) {
