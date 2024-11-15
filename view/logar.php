@@ -27,8 +27,8 @@
 
         <span>ainda não possui conta?</span>
         <a href="cadastro.php">cadastrar</a>
-        <span id="esquecisenhamodal">esqueci minha senha</span>
-        <div class="modal fade" tabindex="-1" aria-labelledby="modalsenha" aria-hidden="true"id="modalsenha">
+        <button id="esquecisenhamodal">esqueci minha senha</button>
+        <div class="modal fade" tabindex="-1" aria-labelledby="modalsenha" aria-hidden="true" id="modalsenha">
             <span>digite seu email para recuperar senha</span>
             <form method="POST" id="esquecisenhaform">
                 <input type="email" name="email">
