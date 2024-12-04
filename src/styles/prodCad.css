@@ -1,0 +1,238 @@
+:root {
+    --background-color: #FFFFFF;
+    --section: #FF3333;
+    --details: #ba1a1a;
+    --footer: #494949;
+    --footer2: #373737;
+    --feedback: #E3E3E3;
+    --bttnHeader: #a6a4a4;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.pLogin{
+padding: 1rem !important!;
+margin-bottom: 1rem !important; 
+}
+
+.padding{
+    padding: 0 1.5rem;
+}
+
+p{
+    font-weight: lighter;
+    font-size: .75rem;
+}
+
+h1{
+    font-size: 2rem !important;
+}
+
+
+.cadastre{
+    color: var(--background-color);
+    background: linear-gradient(to top, #ba1a1a, #FF3333);
+    text-align: center;
+    padding: 3rem 1.5rem 4.75rem;
+}
+
+.data{
+    padding: 2rem 1.5rem 4rem;
+}
+
+.input{
+    margin-bottom: 1.5rem;
+    width: 100%;
+    border-color: var(--details);
+    border-width: 1px;
+    border-radius: 8px;
+    padding: 0 .8rem;
+    
+}
+
+#dataDivBttn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.dataBttn{
+    background: linear-gradient(to right, #FF4646,#E12020);
+    color: var(--background-color);
+    font-weight: lighter;
+    border-style: none;
+    padding: .4rem 2.5rem;
+    border-radius: 12px;
+}
+
+.cadastreBttn{
+    font-size: .75rem;
+    color: var(--background-color);
+    background: transparent;
+    border-width: 1px;
+    border-radius: 10px;
+    font-weight: lighter;
+    padding: .2rem 1.5rem;
+}
+
+
+
+.navMobile {
+    height: 4rem;
+    background-color: var(--footer);
+    padding: 1rem 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.navMobile > ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navMobileLink {
+    list-style: none;
+}
+
+.navMobileLink img {
+    height: 1.5rem;
+}
+
+nav ul{
+    padding-left: 0;
+}
+
+ .cadastre p{
+        font-size: 1.2rem;
+        margin-bottom: 1rem !important;
+        padding: 1rem !important;
+    }
+
+    .data p,
+    .data h1 {
+        text-align: center;
+    }
+    
+
+
+
+@media screen and (min-width: 768px){
+    main{
+        background-color: var(--feedback);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 10rem;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    p{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    h1{
+        font-size: 2.5rem !important;
+        font-weight: bold !important;
+    }
+
+    #display{
+        display: block;
+        margin-bottom: 3rem;
+    }
+
+    .login{ 
+        display: block;
+        margin-bottom: 3rem;
+        width: fit-content;
+    }
+
+    #card{
+        background-color: var(--background-color);
+        display: flex;
+        flex-direction: row-reverse;
+        border-radius: 15px;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .dataBttn{
+        padding: .5rem 2.5rem;
+        font-size: 1.25rem;
+        font-weight: 500;
+        border-radius: 15px;
+    }
+
+    #dataDivInput{
+        width: 75%;
+    }
+
+    .input{
+        height: 1.7rem;
+    }
+
+    #dataDivBttn{
+        justify-content: left;
+        width: fit-content;
+    }
+
+    .cadastre{
+        display: flex;
+        align-items: center;
+    }
+
+    .data{
+        padding: 5rem 5rem 17rem;
+        width: 90%;
+    }
+
+    .cadastre{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cadastre p{
+        font-size: 1.2rem;
+        margin-bottom: 1rem !important;
+        padding: 1rem !important;
+    }
+
+    .cadastreBttn{
+        padding: .5rem 2.5rem;
+        font-size: 1.2rem;
+        background: transparent;
+        border-radius: 17px;
+    }
+
+    .cadastreBttn:hover{
+        background-color: var(--background-color);
+        color: var(--details);
+    }
+
+    #card2{
+        display: flex;
+        background-color: var(--background-color);
+        border-radius: 15px;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .navMobile{
+        display: none;
+    }
+
+}

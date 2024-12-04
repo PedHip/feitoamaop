@@ -1,0 +1,117 @@
+:root {
+    --background-color: #ffffff;
+    --section: #ff3333;
+    --details: #ba1a1a;
+    --footer: #494949;
+    --footer2: #373737;
+    --feedback: #e3e3e3;
+    --bttnHeader: #a6a4a4;
+}
+
+/* Estilo da aba expansível */
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+
+.perfilBttn, 
+.dropdown {
+  border: none;      
+  outline: none;    
+}
+
+.perfilBttn:focus,
+.dropdown:focus {
+  outline: none;     
+}
+
+.dropdown-content {
+  border: none;      
+}
+
+#dropdownContent a {
+  border: none;    
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    height: auto;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+}
+
+.dropdown-content .dropdownbuttons:hover {
+    background-color: #ddd;
+}
+
+#mensagemnome {
+    cursor: pointer;
+    color: var(--section);
+}
+
+#mensagemnome:hover {
+    text-decoration: underline;
+}
+
+.dropdownbuttons {
+    width: 150px !important;
+    padding: 10px 20px !important;
+    height: auto !important;
+    color: black !important;
+}
+
+#dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+/* Estilo para o ícone do perfil (imagem e dropdown) */
+#mensagemnomemobile {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Estilo para o dropdown */
+.dropdown-contentMobile {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 10px;
+    background-color: var(--footer);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.dropdownbuttonsMobile{
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-weight: 300 !important;
+    font-size: 28px;
+}
+
+.dropdownbuttonsMobile a{
+    color: #fff;
+    font-weight: 300;
+}
